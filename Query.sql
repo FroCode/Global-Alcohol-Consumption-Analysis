@@ -85,3 +85,17 @@ FROM
 ORDER BY
     beer_servings DESC
 LIMIT 1;
+
+# Question 5
+
+SELECT
+    country,
+    beer_servings,
+    spirit_servings,
+    wine_servings,
+    total_litres_of_pure_alcohol,
+    (beer_servings + spirit_servings + wine_servings) AS total_consumption
+FROM
+    dr
+ORDER BY
+    total_consumption DESC;
