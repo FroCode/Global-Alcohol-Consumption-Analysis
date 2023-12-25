@@ -73,4 +73,15 @@ WHERE
 GROUP BY
     location;
 
-#Questio
+#Question 4 :
+SELECT
+    country,
+    beer_servings,
+    spirit_servings,
+    wine_servings,
+    total_litres_of_pure_alcohol
+FROM
+    dr
+ORDER BY
+    beer_servings DESC
+LIMIT 1;
