@@ -193,3 +193,19 @@ WHERE
             AND COUNT(DISTINCT spirit_servings) = 1
             AND COUNT(DISTINCT wine_servings) = 1
     );
+# Qst 9 :
+
+
+-- Assuming your table is named 'dr' and has columns 'country', 'beer_servings', 'spirit_servings', and 'wine_servings'
+
+SELECT
+    country,
+    beer_servings,
+    spirit_servings,
+    wine_servings
+FROM
+    dr
+WHERE
+    beer_servings > 150  -- Adjust the threshold for high beer servings
+    AND spirit_servings < 50  -- Adjust the threshold for low spirit servings
+    AND wine_servings < 50;  -- Adjust the threshold for low wine servings
