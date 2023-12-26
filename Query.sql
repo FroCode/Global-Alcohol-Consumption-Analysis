@@ -164,3 +164,32 @@ SELECT
 FROM
     dr;
 
+
+# Question 8
+
+-- Assuming your table is named 'dr' and has columns 'country', 'beer_servings', 'spirit_servings', and 'wine_servings'
+
+-- Assuming your table is named 'dr' and has columns 'country', 'beer_servings', 'spirit_servings', and 'wine_servings'
+
+-- Assuming your table is named 'dr' and has columns 'country', 'beer_servings', 'spirit_servings', and 'wine_servings'
+
+SELECT
+    country,
+    beer_servings,
+    spirit_servings,
+    wine_servings
+FROM
+    dr
+WHERE
+    country IN (
+        SELECT
+            country
+        FROM
+            dr
+        GROUP BY
+            country
+        HAVING
+            COUNT(DISTINCT beer_servings) = 1
+            AND COUNT(DISTINCT spirit_servings) = 1
+            AND COUNT(DISTINCT wine_servings) = 1
+    );
