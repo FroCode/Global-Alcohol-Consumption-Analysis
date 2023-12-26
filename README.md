@@ -42,8 +42,8 @@ Create a radar chart to compare the consumption of each type of beverage for the
 
 ### To Check The Report You Can Download :
 
-[- Power Bi ](https://github.com/FroCode/HR-Dashboard-MySQL-PowerBI/blob/main/HR%20Empolyee%20Report.pbix)
+[ Power Bi ](https://github.com/FroCode/HR-Dashboard-MySQL-PowerBI/blob/main/HR%20Empolyee%20Report.pbix)
 
-[-Pdf Report](https://github.com/FroCode/Drinks-Analyst/blob/main/World%20Brew%20Trends.pdf)
+[Pdf Report](https://github.com/FroCode/Drinks-Analyst/blob/main/World%20Brew%20Trends.pdf)
 
 ### -Thank You
