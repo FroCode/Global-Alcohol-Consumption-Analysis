@@ -1,5 +1,8 @@
+![image](https://github.com/FroCode/Drinks-Analyst/assets/43009141/edfe6eb2-86da-4c5b-ba99-8bb80ad04a33)
+![image](https://github.com/FroCode/Drinks-Analyst/assets/43009141/11805d18-9e02-4fa9-95d1-4d3f67cfb181)
+
 ### Data Used
-Data - Drinks 
+Drinks(csv) 
 
 Data Cleaning & Analysis - MySQL Workbench - SQL Queries - DataGrip
 
