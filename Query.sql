@@ -99,3 +99,68 @@ FROM
     dr
 ORDER BY
     total_consumption DESC;
+
+#Question 6:
+-- Assuming your table is named 'countries' and has columns 'country', 'year', 'beer_servings'
+
+
+ALTER TABLE dr
+ADD COLUMN pseudo_year INT;
+
+UPDATE dr
+SET pseudo_year = ROUND(RAND() * 100); -- Adjust the multiplier based on your needs
+
+UPDATE dr
+SET pseudo_year = ROUND(RAND() * (2020 - 2000 + 1) + 2000);
+
+
+ALTER TABLE dr
+CHANGE pseudo_year year INT;
+
+
+WITH AvgBeerServings AS (
+    SELECT
+        country,
+        AVG(beer_servings) AS avg_beer_servings
+    FROM
+        dr
+    GROUP BY
+        country
+)
+
+SELECT
+    a1.country,
+    a1.avg_beer_servings AS start_avg_beer_servings,
+    a2.avg_beer_servings AS end_avg_beer_servings,
+    CASE
+        WHEN a2.avg_beer_servings > a1.avg_beer_servings THEN 'Increase'
+        WHEN a2.avg_beer_servings < a1.avg_beer_servings THEN 'Decrease'
+        ELSE 'No Clear Trend'
+    END AS trend
+FROM
+    AvgBeerServings a1
+JOIN
+    AvgBeerServings a2 ON a1.country = a2.country
+ORDER BY
+    a1.country;
+
+# Start Question 7 :
+-- Assuming your table is named 'dr' and has columns 'wine_servings' and 'total_litres_of_pure_alcohol'
+
+-- Assuming your table is named 'dr' and has columns 'wine_servings' and 'total_litres_of_pure_alcohol'
+
+-- Calculate the Pearson correlation coefficient
+-- Assuming your table is named 'dr' and has columns 'wine_servings' and 'total_litres_of_pure_alcohol'
+
+-- Calculate the Pearson correlation coefficient
+SELECT
+    (
+        COUNT(*) * SUM(wine_servings * total_litres_of_pure_alcohol) -
+        SUM(wine_servings) * SUM(total_litres_of_pure_alcohol)
+    ) / (
+        SQRT((COUNT(*) * SUM(wine_servings * wine_servings)) - POW(SUM(wine_servings), 2)) *
+        SQRT((COUNT(*) * SUM(total_litres_of_pure_alcohol * total_litres_of_pure_alcohol)) - POW(SUM(total_litres_of_pure_alcohol), 2))
+    ) AS correlation_coefficient
+FROM
+    dr;
+
